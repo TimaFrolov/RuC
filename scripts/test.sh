@@ -168,7 +168,7 @@ build_vm()
 	if [[ $OSTYPE == "msys" ]] ; then
 		interpreter=./ruc-vm/build/Release/ruc-vm
 		PATH=$PATH:`dirname $0`/../build/ruc-vm/build/Release/
-		echo $PATH
+		printf $PATH
 	else
 		interpreter=./ruc-vm/build/ruc-vm
 	fi
