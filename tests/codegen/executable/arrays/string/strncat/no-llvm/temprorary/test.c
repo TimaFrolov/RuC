@@ -8,7 +8,7 @@ void MAIN()
     a = '\n';
     printid(a);
 
-    strcat(&b, "bc");
+    strcat(b, "bc");
     printid(b);
     
     a = '\0';
