@@ -192,10 +192,10 @@ static void ident_init(syntax *const sx)
 	builtin_add(sx, U"rand", U"случ", type_function(sx, TYPE_FLOATING, ""));
 	builtin_add(sx, U"round", U"округл", type_function(sx, TYPE_INTEGER, "f"));
 
-	builtin_add(sx, U"strcpy", U"копир_строку", type_function(sx, TYPE_VOID, "Ss"));
-	builtin_add(sx, U"strncpy", U"копир_н_симв", type_function(sx, TYPE_VOID, "Ssi"));
-	builtin_add(sx, U"strcat", U"конкат_строки", type_function(sx, TYPE_VOID, "Ss"));
-	builtin_add(sx, U"strncat", U"конкат_н_симв", type_function(sx, TYPE_VOID, "Ssi"));
+	builtin_add(sx, U"strcpy", U"копир_строку", type_function(sx, TYPE_VOID, "ss"));
+	builtin_add(sx, U"strncpy", U"копир_н_симв", type_function(sx, TYPE_VOID, "ssi"));
+	builtin_add(sx, U"strcat", U"конкат_строки", type_function(sx, TYPE_VOID, "ss"));
+	builtin_add(sx, U"strncat", U"конкат_н_симв", type_function(sx, TYPE_VOID, "ssi"));
 	builtin_add(sx, U"strcmp", U"сравн_строк", type_function(sx, TYPE_INTEGER, "ss"));
 	builtin_add(sx, U"strncmp", U"сравн_н_симв", type_function(sx, TYPE_INTEGER, "ssi"));
 	builtin_add(sx, U"strstr", U"нач_подстрок", type_function(sx, TYPE_INTEGER, "ss"));
@@ -840,9 +840,6 @@ item_t type_function(syntax *const sx, const item_t return_type, const char *con
 					break;
 				case 's':
 					local_modetab[3 + i] = type_string(sx);
-					break;
-				case 'S':
-					local_modetab[3 + i] = type_pointer(sx, type_string(sx));
 					break;
 				case 'i':
 					local_modetab[3 + i] = TYPE_INTEGER;
